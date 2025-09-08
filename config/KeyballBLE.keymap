@@ -31,6 +31,13 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp GRAVE>;
+            label = "NEW_MACRO";
+        };
     };
 
     behaviors {
@@ -59,7 +66,7 @@
         default_layer {
             bindings = <
 &kp Q      &kp W         &kp E         &kp R      &kp T                                     &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F      &kp G      &to 1           &to 0          &kp H      &kp J  &kp K      &kp L    &kp ENTER
+&kp A      &kp S         &kp D         &kp F      &kp G      &new_macro      &to 0          &kp H      &kp J  &kp K      &kp L    &kp ENTER
 &kp Z      &kp X         &kp C         &kp V      &kp B      &kt DELETE      &kt GRAVE      &kp N      &kp M  &kp COMMA  &kp DOT  &kp RIGHT_SHIFT
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mkp RCLK  &mkp LCLK  &kp SPACE       &kp BACKSPACE  &kp MINUS                             &to 3
             >;
